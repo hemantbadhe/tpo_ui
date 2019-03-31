@@ -1,0 +1,42 @@
+<div class="animated fadeIn">
+    <div class="row" >
+        <div class="col-sm-6 col-md-6" *ngFor="let drive of drives">
+            <div class="card card-accent-success">
+              <div class="card-header">
+                {{drive.company_name}} - {{drive.designation}}
+              </div>
+              <div class="card-body">
+                 
+                <table>
+                    <thead>
+                      <th></th><th></th><th></th>
+                    </thead>
+                    <tbody>
+                        <tr><td>Company Name</td><td>:</td><td>{{drive.company_name}}</td></tr>
+                        <tr><td>Designation</td><td>:</td><td>{{drive.designation}}</td></tr>
+                        <tr><td>Criteria</td><td>:</td><td>{{drive.criteria}}%</td></tr>
+                        <tr><td>Drive Date</td><td>:</td><td>{{drive.drive_date}}</td></tr>
+                        <tr><td>Last date to apply</td><td>:</td><td>{{drive.deadline}}</td></tr>
+                    </tbody>
+                </table>
+                <br/>
+                <strong>Description :</strong>
+                <p [innerHTML]=" drive.description">
+                </p>
+              </div>
+              <div class="card-footer">
+                  <table>
+                  <thead>
+                      <th></th><th></th><th></th>
+                    </thead>
+                    <tbody>
+                        <tr><td><a class="btn btn-danger" target="_blank" href="{{drive.apply_link}}">Apply</a></td><td><a class="btn btn-primary" (click)="send(drive.id)"><i class="icon-cursor"></i> Notification</a> <a class="btn btn-danger" 
+                          (click)="delete(drive.id)"><i class="fa fa-trash" aria-hidden="true" style="color:white;"></i></a> </td></tr>
+                    </tbody>
+                </table>
+              </div>
+            </div>
+        </div><!--/.col-->
+    </div><!--/.row-->
+  
+</div>

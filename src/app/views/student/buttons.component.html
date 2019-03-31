@@ -1,0 +1,89 @@
+<div class="animated fadeIn">
+    <div class="alert alert-success" [style.display]="msg">
+        <strong>Success!</strong> Register
+    </div>
+    <div class="alert alert-danger" [style.display]="errmsg">
+        <strong>Error</strong> {{ error}} 
+    </div>
+  <div class="card">
+    <div class="card-header">
+      <strong>New Student</strong>
+    </div>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="card-body">
+        <div class="row">
+                    
+                    <div class="input-group mb-3 col-md-6">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-user"></i></span>
+                      </div>
+                      <input type="text" class="form-control" formControlName="firstName"  placeholder="First Name" autocomplete="First Name" [required]="true">
+                    </div>
+                    <div class="input-group mb-3 col-md-6">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-user"></i></span>
+                      </div>
+                      <input type="text" class="form-control" formControlName="middleName" placeholder="Middle Name" autocomplete="Middle Name" required>
+                    </div>
+                    <div class="input-group mb-3 col-md-6">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="icon-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" formControlName="lastName" placeholder="Last Name" autocomplete="Middle Name" required>
+                    </div>
+                    <div class="input-group mb-3 col-md-6">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-phone"></i></span>
+                      </div>
+                      <input type="text" class="form-control" formControlName="contact" placeholder="Contact" autocomplete="Contact"  maxlength="10" pattern="[0-9]^$" required>
+                    </div>
+                    <div class="input-group mb-3 col-md-6">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-calendar"></i></span>
+                      </div>
+                      <label class="upload form-control">
+                          <input type="date"   formControlName="dateBirth" placeholder="Date Of Birth" autocomplete="Date Of Birth"   required>
+                          Date of birth
+                        </label>
+                    </div>
+                    <div class="input-group mb-3 col-md-6">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">@</span>
+                        </div>
+                        <input type="text" class="form-control" formControlName="email" placeholder="Email" autocomplete="Email" required>
+                      </div> 
+                      <div class="input-group mb-3 col-md-6">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="icon-people"></i></span>
+                        </div>
+                        <input type="text" class="form-control" formControlName="deparment" placeholder="Deparment" autocomplete="Deparment" required>
+                      </div>  
+                      <div class="input-group mb-3 col-md-6">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="icon-frame"></i></span>
+                        </div>
+                        <input type="text" class="form-control" formControlName="iCard" placeholder="I-Card No" autocomplete="I-Card No" required>
+                      </div>
+                      <div class="input-group mb-3 col-md-6">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="icon-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" formControlName="admissionYear"  placeholder="Admission Year" autocomplete="Admission Year" required>
+                      </div>
+                   
+            </div> 
+            <div class="card-footer p-4">
+              <div class="row ">
+                <div class="col-md-3 col-12 col-xs-12 mb-3" >
+                   <button [disabled]="loading" class="btn btn-block btn-success">Add Student</button>
+                </div>
+                
+              </div>
+            </div> 
+          
+    </div>
+  </form>
+ 
+  </div>
+ 
+</div>

@@ -1,0 +1,30 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Chat</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body chat-scroll"  #scrollMe [scrollTop]="scrollMe.scrollHeight" style=" overflow: scroll;  max-height: 500px;  height: xyz; background-color: #eee !important;" id="divExample" >
+   <div *ngFor="let msg of messages">
+      <div class="card-panel pull-left  " style="width: 75%; position: relative;background-color: #e9c1e7" *ngIf="msg.sender == recId">
+          <div style="position: absolute; top: 0; left:3px; font-weight: bolder" class="title" >{{recName}}</div>
+           <span id="receiver">{{msg.message}}</span>
+      </div>
+    
+      <div class="card-panel pull-right  blue lighten-5" style="width: 75%; position: relative" *ngIf="msg.sender == userId" >
+              <div style="position: absolute; top: 0; left:3px; font-weight: bolder"
+              class="title">You </div>
+            <span id="sender">{{msg.message}}</span> 
+      </div>
+   </div> 
+  
+  </div>
+  <div class="modal-footer">
+    <input class="form-control" type="text"  style="font-size: 1.875rem;" #chat_msg >
+    <button type="button" class="btn btn-outline-dark" (click)="send(userId,recId,chat_msg);chat_msg.value=''"> <i class="icon-cursor"></i> Send</button>
+  </div>
+</ng-template>
+
+<a class="btn btn-success" (click)="open(content)"><i class="fa fa-comments " style="font-size:20px"></i></a>
+

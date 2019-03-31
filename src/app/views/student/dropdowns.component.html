@@ -1,0 +1,51 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          Student List
+          <div class="card-header-actions">
+            <a href="https://valor-software.com/ngx-bootstrap/#/dropdowns" target="_blank">
+              <small className="text-muted">Excel</small>
+            </a>
+          </div>
+        </div>
+        <div class="card-body">
+           <table class="table table-bordered table-striped table-sm">
+            <thead>
+              <tr>
+                <th>I-Card No</th>
+                <th>Email</th>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+                <th>Department</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let student of students ; let i = index">
+                <td>{{student.i_card_no}}</td>
+                <td>{{student.email}}</td>
+                <td>{{student.first_name}}</td>
+                <td>{{student.middle_name}}</td>
+                <td>{{student.last_name}}</td>
+                <td>{{student.department}}</td>
+                <td style="text-align: center;">
+                  <span class="badge badge-success" *ngIf="student.status===true">In</span>
+                  <span class="badge badge-danger" *ngIf="student.status===false">Out</span>
+                </td>
+              </tr>
+            
+            </tbody>
+          </table>
+          <div class="col-xs-12 col-12 d-sm-down-none">
+              <pagination [totalItems]="totalItems" [(ngModel)]="currentPage" (pageChanged)="pageChanged($event)"></pagination>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+ 
+</div>

@@ -1,0 +1,41 @@
+<div class="animated fadeIn">
+  <div class="row" >
+      <div class="col-sm-6 col-md-6" *ngFor="let student of students">
+          <div class="card card-accent-success">
+            <div class="card-header">
+              {{student.first_name}} {{student.last_name}}
+              <span class="badge badge-success float-right" *ngIf="student.placement===true">Placed</span>
+              <span class="badge badge-danger float-right" *ngIf="student.placement===false" >Not Placed</span>
+            </div>
+            <div class="card-body">
+                  <div class="row">
+                      <div class="col-md-4">
+                            <div class="card" style="width: 8rem;">
+                                <img class="card-img-top" src="{{student.profile_pic}}" alt="Card image cap">
+                            </div>
+                      </div>
+                      <div class="col-md-8">
+                        <table style="border:none;">
+                          <thead>
+                            <th></th><th></th><th></th>
+                          </thead>
+                           <tbody>
+                               <tr style="font-size: 11px;"><td style="font-weight: 700;">ID-Card No </td><td>:</td><td>{{student.i_card_no}}</td></tr>
+                               <tr style="font-size: 11px;"><td style="font-weight: 700;">Date Of Birth </td><td>:</td><td>{{student.dob}}</td></tr>
+                               <tr style="font-size: 11px;"><td style="font-weight: 700;">Contact</td><td>:</td><td>{{student.contact}}</td></tr>
+                               <tr style="font-size: 11px;"><td style="font-weight: 700;">Email </td><td>:</td><td>{{student.email}}</td></tr>
+                               <tr style="font-size: 11px;"><td style="font-weight: 700;">Aggregate</td><td> :</td><td>{{student.aggregate}}%</td></tr>
+                               <tr style="font-size: 11px;"><td style="font-weight: 700;">Department</td><td> :</td><td>{{student.department}}</td></tr>
+                               <tr style="font-size: 11px;"><td style="font-weight: 700;">Academic Year</td><td> :</td><td>{{student.academic_year}}</td></tr>
+                           </tbody>
+                        </table>                          
+                      </div>
+                  </div>               
+
+                </div>
+            
+          </div>
+      </div><!--/.col-->
+  </div><!--/.row-->
+
+</div>

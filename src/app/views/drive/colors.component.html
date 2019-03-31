@@ -1,0 +1,82 @@
+<div class="animated fadeIn">
+    <div class="alert alert-success" [style.display]="msg">
+        <strong>Success!</strong> Drive Add 
+    </div>
+    <div class="alert alert-danger" [style.display]="errmsg">
+        <strong>Error</strong> {{ error}} 
+    </div>
+  <div class="card">
+    <div class="card-header">
+      <strong>New Drive</strong>
+    </div>
+    <form [formGroup]="driveForm" (ngSubmit)="onSubmit()">
+    <div class="card-body">
+        <div class="row">
+                    <div class="input-group mb-3 col-md-6">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-user"></i></span>
+                      </div>
+                      <input type="text" class="form-control" formControlName="company_name" placeholder="Company Name" autocomplete="First Name" required>
+                    </div>
+                    <div class="input-group mb-3 col-md-6">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-user"></i></span>
+                      </div>
+                      <input type="text" class="form-control" formControlName="designation" placeholder="Designation" autocomplete="Designation" required>
+                    </div>
+                    <div class="input-group mb-3 col-md-6">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-wallet"></i></span>
+                      </div>
+                      <input type="text" class="form-control" formControlName="package" placeholder="Package" autocomplete="Package"  maxlength="10" pattern="[0-9]^$" required>
+                    </div>
+                    <div class="input-group mb-3 col-md-6">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-user"></i></span>
+                      </div>
+                      <input type="text" class="form-control" formControlName="criteria" placeholder="Criteria" autocomplete="Criteria" required>
+                    </div>
+                    <div class="input-group mb-3 col-md-6">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-calendar"></i></span>
+                      </div>
+                      <label class="upload form-control">
+                          <input type="date" formControlName="drive_date" placeholder="Drive Date" autocomplete="Drive Date"   required>
+                          Drive Date
+                      </label>
+                    </div>
+                    <div class="input-group mb-3 col-md-6">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-calendar"></i></span>
+                      </div>
+                      <label class="upload form-control">
+                          <input type="date" formControlName="deadline" placeholder="Last Date of Apply" autocomplete="Last Date of Apply"   required>
+                          Last Date
+                      </label>
+                    </div>
+                    <div class="input-group mb-3 col-md-6">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-people"></i></span>
+                      </div>
+                      <input type="text" class="form-control" formControlName="apply_link"  placeholder="Apply Link" autocomplete="Apply Link" required>
+                    </div>              
+                      
+                      <div class="input-group mb-3 col-md-12">
+                        <ck-editor formControlName="description" [(ngModel)]="editorValue" skin="moono-lisa" language="en" [fullPage]="true"></ck-editor>
+                      </div>
+                      
+            </div> 
+            <div class="card-footer p-4">
+              <div class="row ">
+                <div class="col-md-3 col-12 col-xs-12 mb-3" >
+                   <button  [disabled]="loading"  class="btn btn-block btn-success">Add Drive</button>
+                </div>
+                
+              </div>
+            </div> 
+  
+    </div>
+  </form>
+  </div>
+ 
+</div>

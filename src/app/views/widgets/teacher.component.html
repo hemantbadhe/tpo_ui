@@ -1,0 +1,40 @@
+<div class="animated fadeIn">
+        <div class="row" >
+            <div class="col-sm-6 col-md-6" *ngFor="let teacher of teachers">
+                <div class="card card-accent-success">
+                  <div class="card-header">
+                    {{teacher.first_name}} {{teacher.last_name}}
+                    <span class="badge badge-success float-right" >TPO</span>
+
+                  </div>
+                  <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                  <div class="card" style="width: 8rem;">
+                                      <img class="card-img-top" src="{{teacher.profile_pic}}" alt="Card image cap">
+                                  </div>
+                            </div>
+                            <div class="col-md-8">
+                              <table style="border:none;">
+                                <thead>
+                                  <th></th><th></th><th></th>
+                                </thead>
+                                 <tbody>
+                                     <tr style="font-size: 11px;"><td style="font-weight: 700;">ID-Card No </td><td>:</td><td>{{teacher.i_card_no}}</td></tr>
+                                     <tr style="font-size: 11px;"><td style="font-weight: 700;">Date Of Birth </td><td>:</td><td>{{teacher.dob}}</td></tr>
+                                     <tr style="font-size: 11px;"><td style="font-weight: 700;">Contact</td><td>:</td><td>{{teacher.contact}}</td></tr>
+                                     <tr style="font-size: 11px;"><td style="font-weight: 700;">Email </td><td>:</td><td>{{teacher.email}}</td></tr>
+                                     <tr style="font-size: 11px;"><td style="font-weight: 700;">Department</td><td> :</td><td>{{teacher.department}}</td></tr>
+                                 </tbody>
+                              </table>                          
+                            </div>
+                        </div>               
+      
+                      </div>
+                  
+                </div>
+            </div><!--/.col-->
+        </div><!--/.row-->
+      
+      </div>
+      
